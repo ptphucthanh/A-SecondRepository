@@ -3,3 +3,11 @@ hosts: localhost
 roles:
  - Juniper.junos
  connection: local
+ gather_facts: no
+ tasks:
+  - name: update JUNOS config
+  loop: "{{ target_hosts }}"
+  juniper_junos_config:
+   host: "{{ item }}"
+   check: true
+   
