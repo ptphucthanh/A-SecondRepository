@@ -1,0 +1,5 @@
+- name: automation test
+hosts: localhost
+roles:
+ - Juniper.junos
+ connection: local
